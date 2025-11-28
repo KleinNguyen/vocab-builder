@@ -22,6 +22,9 @@ app.use(cors())
 const vocabRouter = require('./api/routes/vocabRoute')
 vocabRouter(app)
 
+const testRouter = require('./api/routes/testRoute')
+testRouter(app)
+
 const port = process.env.PORT || 3000
 
 app.listen(port, ()=>{

@@ -2,7 +2,7 @@ const vocabModel = require('../models/vocabModel')
 
 const getAllVocab = async(req,res) =>{
     try{
-        const response = await vocabModel.find({}).sort({dateTime:-1})
+        const response = await vocabModel.find().sort({dateTime:-1})
         res.status(200).json(response)
     }catch (err){
         console.error(err)
