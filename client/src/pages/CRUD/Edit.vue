@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="w-full flex items-center">
-                <button class="btn btn-outline btn-info w-[140px] flex items-center justify-center gap-2" >
+                <button class="btn btn-info w-[140px] flex items-center justify-center gap-2 transition transform hover:-translate-y-1" >
                     <span class="icon-[tabler--file-upload-filled] text-lg"></span> Update
                 </button>
-                <button class="btn btn-outline btn-default w-[130px] ml-auto flex items-center justify-center gap-2" @click.prevent="onCancel">
+                <button class="btn btn-outline btn-default w-[130px] ml-auto flex items-center justify-center gap-2 transition transform hover:-translate-y-1" @click.prevent="onCancel">
                     <span class="icon-[tabler--arrow-narrow-left] text-lg"></span> Cancel
                 </button>
                 </div>
@@ -55,8 +55,11 @@ export default {
     },
     setup(){
         const toast = useToast();
-
-        const word = ref({})
+        const word = ref({
+            "english":"",
+            "german":"",
+            "vietnamese":""
+        })
         const route = useRoute()
         const router = useRouter()
 

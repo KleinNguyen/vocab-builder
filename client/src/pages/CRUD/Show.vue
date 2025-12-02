@@ -29,16 +29,16 @@
                 </div>
                 <div class="w-full flex items-center relative">
                     <router-link :to="{name: 'edit', params:{id:word._id}}"> 
-                        <button class="btn btn-outline btn-info w-[150px] flex items-center justify-center gap-2">
+                        <button class="btn btn-info w-[150px] flex items-center justify-center gap-2 transition transform hover:-translate-y-1">
                             <span class="icon-[tabler--pencil] text-lg"></span> Edit
                         </button>
                     </router-link>
 
-                    <button class="btn btn-outline btn-error w-[150px] absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-2" @click.prevent="onDelete(word._id)">
+                    <button class="btn btn-error w-[150px] absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center gap-2 transition hover:-translate-y-1" @click.prevent="onDelete(word._id)">
                         <span class="icon-[tabler--trash] text-lg"></span> Delete
                     </button>
 
-                    <button class="btn btn-outline btn-default w-[150px] ml-auto flex items-center justify-center gap-2" @click.prevent="onCancel">
+                    <button class="btn btn-outline btn-default w-[150px] ml-auto flex items-center justify-center gap-2 transition transform hover:-translate-y-1" @click.prevent="onCancel">
                         <span class="icon-[tabler--arrow-narrow-left] text-lg"></span> Back to list
                     </button>
                 </div>
@@ -64,7 +64,11 @@ export default {
     },
     setup(){
         const toast = useToast();
-        const word = ref({})
+        const word = ref({
+            "english":"",
+            "german":"",
+            "vietnamese":""
+        })
         const route = useRoute()
         const router = useRouter()
 

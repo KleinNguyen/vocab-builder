@@ -7,12 +7,36 @@ const testSchema = mongoose.Schema({
     },
     testType:{
         type: String,
-        enum:["typing"],
         required:true
     },
-    vocabs:[{
-        type: mongoose.Schema.ObjectId,
-        ref: 'vocabs'
+    totalQuestions:{
+        type: Number,
+        required: true
+    },
+    questionLanguage:{
+        type: String,
+        // required:true
+
+    },
+    answerLanguage:{
+        type: String,
+        // required:true
+    },
+    tests:[{
+        _id: false,
+        vocabId: {
+            type: mongoose.Schema.ObjectId,
+            ref: 'vocabs',
+            required: true
+        },
+        question: {
+            type: String,
+            // required: true
+        },
+        answer: {
+            type: String,
+            // required: true
+        }
     }],
     dateTime:{
         type: Date,

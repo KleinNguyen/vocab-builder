@@ -6,7 +6,8 @@ const testRoute = (app)=>{
         .get(testController.getAllTest)
         .post(testController.createTest)
 
-    app.route('./api/tests/:id')
+    app.route('/api/tests/:id')
+        .get(testController.runTest)
         .delete(testController.deleteTestById)
 }
 

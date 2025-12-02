@@ -2,8 +2,11 @@ import { createRouter, createWebHistory } from "vue-router";
 import WordsPage from "../pages/CRUD/Words.vue";
 import EditPage from "../pages/CRUD/Edit.vue"
 import NewPage from "../pages/CRUD/New.vue"
-import TestPage from "../pages/Test.vue"
 import ShowPage from "../pages/CRUD/Show.vue"
+import TestPage from "../pages/Testing/Test.vue"
+import newTestPage from "../pages/Testing/newTest.vue";
+import TypingTestPage from "../pages/Testing/TypingTest.vue";
+import FlashCardPage from "../pages/Testing/FlashCard.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,9 +36,24 @@ const router = createRouter({
       component: NewPage
     },
     {
-      path: '/test',
+      path: '/tests',
       name:"test",
       component: TestPage
+    },
+    {
+      path:'/tests/new',
+      name:"new test",
+      component: newTestPage
+    },
+    {
+      path:'/typing/:id',
+      name:"typing",
+      component: TypingTestPage
+    },
+    {
+      path:"/flashcard/:id",
+      name:"flashcard",
+      component: FlashCardPage
     }
   ],
 });

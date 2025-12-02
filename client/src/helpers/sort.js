@@ -1,9 +1,9 @@
 import axios from "axios";
 import url from "./api.js";
 
-const sortAscUrl = url + '/vocabs/sort-asc'
-const sortDescUrl = url + '/vocabs/sort-desc'
-const sortByTimeUrl = url + '/vocabs/sortByTime'
+const sortAscUrl = url + 'vocabs/sort-asc'
+const sortDescUrl = url + 'vocabs/sort-desc'
+const sortByTimeUrl = url + 'vocabs/sortByTime'
 
 export const sortAsc = async()=>{
     try{
@@ -25,15 +25,6 @@ export const sortDesc = async()=>{
     }
 }
 
-export const sortByTime = async()=>{
-    try{
-        const response = await axios.get(sortByTimeUrl)
-        return response.data
-    }catch(err){
-        console.error(err)
-        return(null)
-    }
-}
 
 
 

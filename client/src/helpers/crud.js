@@ -1,7 +1,7 @@
 import axios from "axios";
 import url from "./api.js";
 
-const crudUrl = url + '/vocabs/'
+const crudUrl = url + 'vocabs/'
 
 export const getAllVocab = async()=>{
     try{
