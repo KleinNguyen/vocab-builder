@@ -4,8 +4,8 @@ const app = express()
 
 // import mongoose library and connect to db
 const mongoose = require('mongoose')
-// const db_local = "mongodb://localhost:27017/vocab-learning"
-const db_local = "mongodb+srv://huongnguyen:tuanty@mydbcluster.xkgc6eu.mongodb.net/vocab-learning"
+const db_local = "mongodb://localhost:27017/vocab-learning"
+// const db_local = "mongodb+srv://huongnguyen:tuanty@mydbcluster.xkgc6eu.mongodb.net/vocab-learning"
 
 mongoose.connect(db_local)
     .then(() => console.log('Connect to DB succeed'))
